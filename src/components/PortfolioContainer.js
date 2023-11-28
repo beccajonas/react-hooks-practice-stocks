@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import Stock from "./Stock";
 
-function PortfolioContainer() {
+function PortfolioContainer({ }) {
+
+
+
   return (
     <div>
       <h2>My Portfolio</h2>
