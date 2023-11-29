@@ -1,21 +1,26 @@
 import React, {useState} from "react";
 
-function Stock({ stock, handleBuy, }) {
+function Stock({ stock, handleBuy, handleDelete }) {
 
+  const {name, price} = stock
 
-  const {id, ticker, name, type, price} = stock
-  console.log(handleBuy);
-
-  function handleClick() {
-    console.log('click');
-    handleBuy(stock)
+  function handleClick(e) {
+    if(e.target
+      .parentNode
+      .parentNode
+      .parentNode
+      .parentNode
+      .className === "col-8")
+    {return handleBuy(stock)}
+    else (handleDelete(stock))
   }
 
 
 
+
   return (
-    <div>
-      <div onClick={handleClick} className="card">
+    <div onClick={handleClick} >
+      <div className="card">
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
           <p className="card-text">{price}</p>

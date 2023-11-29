@@ -1,16 +1,19 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Stock from "./Stock";
 
-function PortfolioContainer({ }) {
+function PortfolioContainer({ portfolio, handleDelete }) {
 
-
+  const renderPortfolio = portfolio.map( stock=> 
+    <Stock
+    stock={stock}
+    key={stock.id}
+    handleDelete={handleDelete} 
+    />)
 
   return (
     <div>
       <h2>My Portfolio</h2>
-      {
-        //render your portfolio stocks here
-      }
+        {renderPortfolio}
     </div>
   );
 }

@@ -1,12 +1,13 @@
 import React from "react";
 import Stock from "./Stock";
+import {uuid} from 'react-uuid';
 
 function StockContainer({ stockList, handleBuy }) {
   console.log(stockList, 'from stock container');
   const renderStocks = stockList.map(stock => 
     <Stock
       stock={stock}
-      key={stock.id} 
+      id={uuid}
       handleBuy={handleBuy} 
     />)
   return (
